@@ -1,7 +1,7 @@
-//jvm "graalvm-java17:22.3.2"
-//> using lib "com.amazonaws:aws-lambda-java-core:1.2.2"
-//> using lib "com.amazonaws:aws-lambda-java-events:3.11.1"
-//> using lib "com.amazonaws:aws-lambda-java-runtime-interface-client:2.3.2"
+//> using jvm "graalvm-java17:22.3.2"
+//> using dep "com.amazonaws:aws-lambda-java-core:1.2.2"
+//> using dep "com.amazonaws:aws-lambda-java-events:3.11.1"
+//> using dep "com.amazonaws:aws-lambda-java-runtime-interface-client:2.3.2"
 //> using mainClass "com.amazonaws.services.lambda.runtime.api.client.AWSLambda"
 //> using resourceDir "../resources"
 
