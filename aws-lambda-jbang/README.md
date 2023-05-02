@@ -1,6 +1,6 @@
-## Example AWS Lambda Application in Scala
+## Example AWS Lambda Application in Java 17
 
-This example illustrates creating a simple AWS Lambda function in Scala.
+This example illustrates creating a simple AWS Lambda function in Java 17.
 
 ## Building deployable artifact
 
