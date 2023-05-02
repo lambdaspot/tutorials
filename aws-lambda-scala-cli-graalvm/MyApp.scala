@@ -1,36 +1,20 @@
 //> using scala "3"
 //> using jvm "graalvm-java17:22.3.2"
-//> using repository "jitpack"
-//> using dep "com.github.lambdaspot:aws-lambda-scala-bridge:0.1.5"
 //> using dep "com.amazonaws:aws-lambda-java-core:1.2.2"
+//> using dep "com.amazonaws:aws-lambda-java-events:3.11.1"
 //> using dep "com.amazonaws:aws-lambda-java-runtime-interface-client:2.3.2"
-//> using dep "com.github.plokhotnyuk.jsoniter-scala::jsoniter-scala-core:2.23.0"
-//> using dep "com.github.plokhotnyuk.jsoniter-scala::jsoniter-scala-macros:2.23.0"
 //> using mainClass "com.amazonaws.services.lambda.runtime.api.client.AWSLambda"
 
 import com.amazonaws.services.lambda.runtime.Context
-import com.github.plokhotnyuk.jsoniter_scala.core.JsonValueCodec
-import com.github.plokhotnyuk.jsoniter_scala.macros.JsonCodecMaker
-import dev.lambdaspot.aws.lambda.core.*
-import dev.lambdaspot.aws.lambda.events.ApiGatewayProxiedResponse
+import com.amazonaws.services.lambda.runtime.Context
+import com.amazonaws.services.lambda.runtime.RequestHandler
+import com.amazonaws.services.lambda.runtime.events._
 
-import scala.util.{Success, Try}
+class MyApp extends RequestHandler[APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent] {
+  override def handleRequest(event: APIGatewayProxyRequestEvent, context: Context): APIGatewayProxyResponseEvent =
+    new APIGatewayProxyResponseEvent()
+      .withStatusCode(200)
+      .withBody("Hello world!")
+}
 
-// AWS Lambda handler
-object MyApp extends AwsLambdaEntryPoint:
-  override lazy val entryPoint =
-    new AwsLambda[PersonDto, ApiGatewayProxiedResponse]:
-      override def run(person: PersonDto, context: Context): Try[ApiGatewayProxiedResponse] =
-        context.getLogger.log("Request received: " + person + "\n")
-        Success(
-          ApiGatewayProxiedResponse(
-            statusCode = 200,
-            headers = Map("Content-Type" -> "text/plain"),
-            body = Some(s"Hello ${person.name}!")
-          )
-        )
 
-// Request object
-final case class PersonDto(name: String, age: Int)
-object PersonDto:
-  given JsonValueCodec[PersonDto] = JsonCodecMaker.make
