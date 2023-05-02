@@ -1,0 +1,7 @@
+.scala-build
+*.jar
+*.build_artifacts.txt
+/MyApp
+output
+notes.txt
+.bsp

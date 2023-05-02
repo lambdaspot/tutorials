@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: An AWS Serverless Specification template describing your function.
+Resources:
+  HelloJavaFunction:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      CodeUri: MyApp.jar
+      Handler: 'helloworld.MyApp::handleRequest'
+      Runtime: provided.al2
+      Description: 'Hello GraalVM Java in the cloud'
+      MemorySize: 512
+      Architectures:
+        - x86_64
+      Timeout: 3
