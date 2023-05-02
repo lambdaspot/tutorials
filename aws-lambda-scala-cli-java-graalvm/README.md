@@ -8,7 +8,7 @@ enhanced performance. Additionally, the example highlights the option to compile
 To build a deployment package using [Scala-CLI](https://scala-cli.virtuslab.org/), run the following command:
 
 ```bash
-scala-cli --power package MyApp.scala --native-image
+scala-cli --power package MyApp.java --native-image
 ```
 
 If you're using Linux, the above is enough.
