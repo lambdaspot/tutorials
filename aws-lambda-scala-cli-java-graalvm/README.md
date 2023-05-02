@@ -29,7 +29,7 @@ which simulates the AWS Lambda environment and allows for testing of your native
 
 # Manual deployment and testing
 
-Upload the packaged `bootstrap` and compiled `MyApp` to the cloud using AWS Lambda Console. _(Make sure to `chmod 775 bootstrap`)_.
+Upload the zipped `bootstrap` and compiled `MyApp` to the cloud using AWS Lambda Console. _(Make sure to `chmod 775 bootstrap`)_.
 
 Invoke the function.
 
