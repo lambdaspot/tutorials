@@ -1,4 +1,4 @@
 #!/bin/bash
 set -e
 
-./MyApp $_HANDLER
+./native $_HANDLER

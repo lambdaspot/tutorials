@@ -2,6 +2,7 @@
 *.jar
 *.build_artifacts.txt
 /MyApp
-output
 notes.txt
 .bsp
+dist/*
+!dist/bootstrap

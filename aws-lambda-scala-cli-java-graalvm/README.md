@@ -8,7 +8,7 @@ enhanced performance. Additionally, the example highlights the option to compile
 To build a deployment package using [Scala-CLI](https://scala-cli.virtuslab.org/), run the following command:
 
 ```bash
-scala-cli --power package MyApp.java --native-image
+scala-cli --power package MyApp.java --native-image -o dist/native
 ```
 
 If you're using Linux, the above is enough.
@@ -21,6 +21,15 @@ for this purpose.
 Discover more about Scala-CLI in this comprehensive
 article: [One and Done: Embrace single-file JVM apps for speedy development](https://blog.lambdaspot.dev/one-and-done-embrace-single-file-jvm-apps-for-speedy-development).
 
+## Preparing deployment package
+
+Create a zip archive containing the `bootstrap` and `native` files:
+
+```shell
+zip -j dist/package.zip dist/*
+```
+_(Make sure to `chmod 775 dist/bootstrap` earlier)_.
+
 ## Testing locally
 
 In order to conduct local testing, it is necessary to utilize
@@ -29,7 +38,7 @@ which simulates the AWS Lambda environment and allows for testing of your native
 
 # Manual deployment and testing
 
-Upload the zipped `bootstrap` and compiled native `MyApp` to the cloud using AWS Lambda Console. _(Make sure to `chmod 775 bootstrap`)_.
+Upload the [zipped package](#preparing-deployment-package) to the cloud using AWS Lambda Console.
 
 Invoke the function.
 
