@@ -17,7 +17,7 @@ Discover more about Scala-CLI in this comprehensive article: [One and Done: Embr
 Run the function locally
 using [AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html) (make sure you have v1.82.0+):
 
-Invoke the function `echo '{"name": "John Doe", "age": 44}' | sam local invoke --event - "HelloScalaFunction"`.
+Invoke the function `echo '{"name": "John Doe", "age": 44}' | sam local invoke --event - "HelloFunction"`.
 
 See result:
 ```json

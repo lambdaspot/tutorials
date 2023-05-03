@@ -2,10 +2,10 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
 Description: An AWS Serverless Specification template describing your function.
 Resources:
-  HelloJavaFunction:
+  HelloFunction:
     Type: 'AWS::Serverless::Function'
     Properties:
-      CodeUri: MyApp.jar
+      CodeUri: package.zip
       Handler: 'helloworld.MyApp::handleRequest'
       Runtime: provided.al2
       Description: 'Hello GraalVM Java in the cloud'
