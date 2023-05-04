@@ -18,6 +18,13 @@ However, there is no need to create a Dockerfile manually, as you can also utili
 the [Scala-CLI's Docker image](https://github.com/VirtusLab/scala-cli/blob/main/website/docs/release_notes.md#added-support-for-packaging-native-images-from-docker)
 for this purpose.
 
+```bash
+docker pull virtuslab/scala-cli
+docker run --rm -v $(pwd)/MyApp.java:/MyApp.java -v $(pwd)/dist:/dist -v $(pwd)/resources:/resources virtuslab/scala-cli --power package --native-image -o dist/native /MyApp.java
+```
+
+The files will be generated in the `dist` directory.
+
 Discover more about Scala-CLI in this comprehensive
 article: [One and Done: Embrace single-file JVM apps for speedy development](https://blog.lambdaspot.dev/one-and-done-embrace-single-file-jvm-apps-for-speedy-development).
 
