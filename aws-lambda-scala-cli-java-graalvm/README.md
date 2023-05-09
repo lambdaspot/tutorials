@@ -23,7 +23,7 @@ docker pull virtuslab/scala-cli
 docker run --rm -v $(pwd)/MyApp.java:/MyApp.java -v $(pwd)/dist:/dist -v $(pwd)/resources:/resources virtuslab/scala-cli --power package --native-image -o dist/native /MyApp.java
 ```
 
-The files will be generated in the `dist` directory.
+You can find the files generated in the `dist` directory.
 
 Discover more about Scala-CLI in this comprehensive
 article: [One and Done: Embrace single-file JVM apps for speedy development](https://blog.lambdaspot.dev/one-and-done-embrace-single-file-jvm-apps-for-speedy-development).

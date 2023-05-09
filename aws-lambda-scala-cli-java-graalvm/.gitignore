@@ -6,3 +6,4 @@ notes.txt
 .bsp
 dist/*
 !dist/bootstrap
+/samconfig.toml

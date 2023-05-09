@@ -5,7 +5,7 @@ Resources:
   HelloFunction:
     Type: 'AWS::Serverless::Function'
     Properties:
-      CodeUri: package.zip
+      CodeUri: dist/package.zip
       Handler: 'helloworld.MyApp::handleRequest'
       Runtime: provided.al2
       Description: 'Hello GraalVM Java in the cloud'
